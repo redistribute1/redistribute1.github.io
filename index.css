@@ -11,4 +11,25 @@ body #welcome {
     text-align: center;
 }
 
+/*styles for the list elements*/
+.listelement {
+    border: .06rem solid #ccc;
+    margin: 0rem;
+    background-color: white;
+    padding: 1.5%;
+    list-style-type: none;
+}
+.title {
+    color: grey;
+    font-size: 200%;
+}
+.date {
+    color: red;
+}
+.address {
+    color: blue;
+}
+.description {
+    color: green;
+}
 
