@@ -31,9 +31,18 @@ function render_event_list_element(doc) {
     event_list.appendChild(li);
 }
 
-db.collection('event-list').get().then((snapshot) => {
-    snapshot.docs.forEach(doc => {
-        render_event_list_element(doc);
-        console.log(doc.data);
+//real time listener to query the charity event elements.
+db.collection('event-list').orderBy('date').onSnapshot(snapshot => {
+    let changes = snapshot.docChanges();
+
+    //for each element in the query
+    changes.forEach(change => {
+        //if it is tagged as added then render it otherwise remove it
+        if (change.type == 'added') {
+            render_event_list_element(change.doc);
+        } else if (change.type == 'removed') {
+            let li = event_list.querySelector('[event-id=' + change.doc.id + ']');
+            event_list.removeChild(li);
+        }
     })
 })

@@ -40,6 +40,44 @@ body .create-button:hover {
 h1, h2, h3 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif MS;
 }
+
+
+.navbar-custom {
+    background-color: var(--main-blue);
+    /*background-color: #ebf5ff;*/
+    box-shadow: .2rem .2rem .1rem .1rem #ccc;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/*Default is none; shown by firebase*/
+.navbar-nav .logged_in,
+.navbar-nav .logged_out {
+    display: none;
+}
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: #FFFFFF;
+    padding: .85rem;
+}
+/* change the link color and add padding for height */
+.navbar-custom .navbar-nav .nav-link {
+    color: #FFFFFF;
+    padding: .85rem;
+}
+
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #000000;
+    /*background-color: #FFFFFF;
+    border: .1rem solid #FFFFFF;
+    border-radius: 1rem;*/
+    /*background-color: #ee4400;*/ /* add background-color to active links */
+}
     
     
     
