@@ -44,20 +44,26 @@ function render_event_list_element(doc) {
 
 function convert_list_element(doc) {
     html = `
-    <li event-id=${doc.ide} class="listelement">
-        <span class="title">${doc.data().title}</span><br>
-        <span class="date">Date: ${doc.data().date}</span><br>
-        <span class="address">Address: ${doc.data().address}</span><br>
-        <span class="organ_name">Organization Name: ${doc.data().organization}</span><br>
-        <span class="type">Charity Type: ${doc.data().type}</span><br>
-        <span class="description">${doc.data().description}</span>
+    <li event-id=${doc.id} class="listelement">
+        <button class="details" onclick="upload_event_item_info('${doc.id}')">View Details</button>
+        <span class="title"><strong>${doc.data().title}</strong></span><br>
+        <span class="date"><strong>Date:</strong> ${doc.data().date}</span><br>
+        <span class="address"><strong>Address:</strong> ${doc.data().address}</span><br>
+        <span class="organ_name"><strong>Organization Name:</strong> ${doc.data().organization}</span><br>
+        <span class="type"><strong>Charity Type:</strong> ${doc.data().type}</span><br><br>
+        <span class="description"><strong>Descripton:</strong> ${doc.data().description}</span>
     </li>
     `
     return html
 }
 
 function addMarker() {
-    
+}
+function upload_event_item_info(docid) {
+    console.log(docid);
+    localStorage.setItem('id', docid);
+    window.location.replace("event-details.html");
+
 }
 
 //real time listener to query the charity event elements.
