@@ -1,5 +1,5 @@
 const event_list = document.querySelector('#event-list'); //reference main page event list
-
+var googlemap = document.getElementById("map"); //reference google map being displayed on the landing page
 // create event list element and render to DOM on main page
 function render_event_list_element(doc) {
 
@@ -56,11 +56,16 @@ function convert_list_element(doc) {
     return html
 }
 
+function addMarker() {
+    
+}
+
 //real time listener to query the charity event elements.
 db.collection('event-list').orderBy('date').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     var event_listID = document.getElementById("event-list");
     var finalhtml = "";
+    
     //for each element in the query
     changes.forEach(change => {
         console.log(changes);
