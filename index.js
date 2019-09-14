@@ -21,6 +21,7 @@ function render_event_list_element(doc) {
     description.setAttribute('class', "description");
     type.setAttribute('class', "type");
 
+    
     //set the textContent to the information retrieved from db
     title.textContent = `${doc.data().title}<br>`;
     date.textContent = doc.data().date;
