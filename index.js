@@ -47,10 +47,10 @@ function convert_list_element(doc) {
     <li event-id=${doc.ide} class="listelement">
         <span class="title">${doc.data().title}</span><br>
         <span class="date">Date: ${doc.data().date}</span><br>
-        <span class="address">${doc.data().address}</span><br>
-        <span class="description">${doc.data().description}</span><br>
+        <span class="address">Address: ${doc.data().address}</span><br>
         <span class="organ_name">Organization Name: ${doc.data().organization}</span><br>
-        <span class="type">Charity Type: ${doc.data().type}</span>
+        <span class="type">Charity Type: ${doc.data().type}</span><br>
+        <span class="description">${doc.data().description}</span>
     </li>
     `
     return html
