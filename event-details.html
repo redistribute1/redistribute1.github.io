@@ -26,17 +26,31 @@
         <div class="row">
           <div class="col-md-10 mx-auto">
             <div id="event_detail_box" class="create-box">
-              <span class="title"><strong>${doc.data().title}</strong></span><br>
-              <span class="date"><strong>Date:</strong> ${doc.data().date}</span><br>
-              <span class="address"><strong>Address:</strong> ${doc.data().address}</span><br>
-              <span class="organ_name"><strong>Organization Name:</strong> ${doc.data().organization}</span><br>
-              <span class="type"><strong>Charity Type:</strong> ${doc.data().type}</span><br><br>
-              <span class="description"><strong>Descripton:</strong> ${doc.data().description}</span>
-              <span class="resources"><strong>Descripton:</strong> ${doc.data().description}</span><br>
-              <span class="volunteers"><strong>Descripton:</strong> ${doc.data().description}</span>
-              <li>
-
-              </li>
+            </div>
+            <br><br>
+            <div id="event_detail_box" class="create-box">
+              <span class="title"><strong>Volunteer for this Event</strong></span>
+              <form id="signup_form">
+                  <div class="form-group">
+                    <label for="signup_email">Name</label>
+                    <input type="email" class="form-control" id="signup_email" aria-describedby="emailHelp"
+                      placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                    <label for="organization_name">Organization Name*</label>
+                    <input type="text" class="form-control" id="organization_name" placeholder="Organization Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="signup_password">Password*</label>
+                    <input type="password" class="form-control" id="signup_pass" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <label for="signup_confirm_password">Confirm Password*</label>
+                    <input type="password" class="form-control" id="signup_confirmpass" placeholder="Confirm Password">
+                  </div>
+                  <div id="error_box"></div>
+                  <button id="create_account" class="create-button" type="submit">Sign Up</button>
+                </form>
             </div>
           </div>
         </div>
