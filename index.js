@@ -22,6 +22,7 @@ function render_event_list_element(doc) {
     organization.setAttribute('class', "organ_name");
     type.setAttribute('class', "type");
 
+    
     //set the textContent to the information retrieved from db
     title.textContent = doc.data().title;
     date.textContent = doc.data().date;
