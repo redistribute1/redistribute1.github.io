@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Create Event</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="resources/css/sign_up.css">
+  <link rel="stylesheet" href="resources/css/main.css">
+  <script src="resources/js/index.js" type="text/javascript"></script>
+</head>
+
+<!-- Navigation Bar Injection -->
+<header>
+  <div id="include"></div>
+</header>
+
+<body>
+  <div class="mobile_margin d-lg-none"></div>
+
+  <!-- Sign Up Box -->
+  <section id="sign_up_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 mx-auto text-center">
+          <div id="signup_box">
+            <h2>Sign Up:</h2>
+            <br>
+            <form id="signup_form">
+              <div class="form-group">
+                <label for="signup_email">Email address*</label>
+                <input type="email" class="form-control" id="signup_email" aria-describedby="emailHelp"
+                  placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label for="first_name">First Name*</label>
+                <input type="text" class="form-control" id="first_name" placeholder="First Name">
+              </div>
+              <div class="form-group">
+                <label for="last_name">Last Name*</label>
+                <input type="text" class="form-control" id="last_name" placeholder="Last Name">
+              </div>
+              <div class="form-group">
+                <label for="signup_password">Password*</label>
+                <input type="password" class="form-control" id="signup_pass" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="signup_confirm_password">Confirm Password*</label>
+                <input type="password" class="form-control" id="signup_confirmpass" placeholder="Confirm Password">
+              </div>
+              <div id="error_box"></div>
+              <button id="create_account" type="submit">Create Account</button>
+            </form>
+          </div>
+          <br><br>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+<!-- FIREBASE SET UP START-->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+
+<!-- Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyC2LtwaQuVFOcIGtuXjiuz9qtqTT20qgQ4",
+    authDomain: "slashlearn-ffbee.firebaseapp.com",
+    databaseURL: "https://slashlearn-ffbee.firebaseio.com",
+    projectId: "slashlearn-ffbee",
+    storageBucket: "slashlearn-ffbee.appspot.com",
+    messagingSenderId: "244265562423",
+    appId: "1:244265562423:web:74bf5e32b11e87e0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  //references to authentication and storage
+  const auth = firebase.auth();
+  const database = firebase.firestore();
+</script>
+
+
+<!--Include auth.js-->
+<script src="resources/js/auth.js" type="text/javascript"></script>
+<script src="resources/js/main_script.js" type="text/javascript"></script>
+
+<!-- FIREBASE SET UP END-->
+
+</html>

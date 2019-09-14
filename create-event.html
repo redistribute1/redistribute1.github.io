@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Create Event</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="create-event.css">
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<!-- Navigation Bar Injection -->
+<header>
+  <div id="include"></div>
+</header>
+
+<body>
+  <div class="mobile_margin d-lg-none"></div>
+
+  <!-- Sign Up Box -->
+  <section id="sign_up_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 mx-auto">
+          <div id="create-event-box" class="create-box">
+            <h2>Add a Charity Event</h2>
+            <br>
+            <form id="create-event-form">
+
+              <div class="form-group">
+                <label for="title">Title of Event:</label>
+                <input type="text" class="form-control" id="title">
+              </div>
+
+              <div class="form-group">
+                <label for="organization">Organization Name:</label>
+                <input type="text" class="form-control" id="organization">
+              </div>
+
+              <div class="form-group">
+                <label for="type">Event Type:</label>
+                <input type="text" class="form-control" id="type"
+                  placeholder="Food Bank, Clothing, Homeless Shelter">
+              </div>
+
+              <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="text" class="form-control" id="date" placeholder="MM-DD-YYYY">
+              </div>
+
+              <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" class="form-control" id="address">
+              </div>
+
+              <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea class="form-control" id="description" rows="5"></textarea>
+              </div>
+
+              <div id="error_box"></div>
+              <button id="create-event-button" class="create-button" type="submit">Create Event</button>
+            </form>
+          </div>
+          <br><br>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+<!-- FIREBASE SET UP START-->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+
+<!-- SDKs for Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDN_Zn6Cdnnq4YozIlFhnjIwxdrO52mY94",
+    authDomain: "redistribute-3bef6.firebaseapp.com",
+    databaseURL: "https://redistribute-3bef6.firebaseio.com",
+    projectId: "redistribute-3bef6",
+    storageBucket: "redistribute-3bef6.appspot.com",
+    messagingSenderId: "592454097229",
+    appId: "1:592454097229:web:490aefd3cf1004313f3f04"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+</script>
+
+<!--Include main-script.js-->
+<script src="create-event.js" type="text/javascript"></script>
+
+<!-- FIREBASE SET UP END-->
+
+</html>

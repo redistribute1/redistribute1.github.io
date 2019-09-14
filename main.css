@@ -1,0 +1,45 @@
+:root{
+/*    --main-blue: #00a5ff;*/
+    --main-blue: #0083FF;
+    --main-blue-darker: #3B5998;
+}
+
+body {
+    margin-top: 7%;
+}
+body .mobile_margin {
+    margin-top: 15%;
+}
+
+/*create box styles*/
+body .create-box {
+    padding: 1rem;
+    background-color: #FFFFFF;
+    border: .1rem solid #ccc;
+    box-shadow: .1rem .1rem .2rem .2rem #ccc;
+    border-radius: 1rem;
+}
+
+/*create button styles*/
+body .create-button, .create-button:visited, .create-button:active {
+    outline: none;
+    color: var(--main-blue);
+    box-shadow: .1rem .1rem .15rem .15rem #ccc;
+    background-color: white;
+    padding: .7% 1.4% .7% 1.4%;
+    font-size: 120%;
+    font-family: Trebuchet MS;
+    border: .2rem solid var(--main-blue);
+    border-radius: 1rem;
+    margin-top: 2rem;
+}
+body .create-button:hover {
+    box-shadow: .0rem 0rem .1rem .2rem var(--main-blue);
+}
+
+h1, h2, h3 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif MS;
+}
+    
+    
+    

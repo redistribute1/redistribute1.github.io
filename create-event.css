@@ -1,0 +1,20 @@
+body {
+    margin-top: 13%;
+    background-color: #FAFAFA;
+    /*background-color: #ebf5ff;*/  
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    height: 100%;
+}
+
+/*entire sign up form box*/
+
+
+/*sign up error m essage*/
+body #error_box {
+    color: red;
+    margin: 0rem 0rem 1rem 0rem;
+}
+
