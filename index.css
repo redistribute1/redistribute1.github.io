@@ -23,13 +23,12 @@ body #welcome {
     color: grey;
     font-size: 200%;
 }
-.date {
+.date .address{
     color: red;
 }
-.address {
-    color: blue;
-}
 .description {
-    color: green;
+    text-align: center;
+    display: inline-block;
+    width: 80%;
 }
 

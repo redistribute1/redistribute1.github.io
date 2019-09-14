@@ -19,11 +19,12 @@ function render_event_list_element(doc) {
     date.setAttribute('class', "date");
     address.setAttribute('class', "address");
     description.setAttribute('class', "description");
+    organization.setAttribute('class', "organ_name");
     type.setAttribute('class', "type");
 
     
     //set the textContent to the information retrieved from db
-    title.textContent = `${doc.data().title}<br>`;
+    title.textContent = doc.data().title;
     date.textContent = doc.data().date;
     address.textContent = doc.data().address;
     description.textContent = doc.data().description;
@@ -41,19 +42,38 @@ function render_event_list_element(doc) {
     event_list.appendChild(li);
 }
 
+function convert_list_element(doc) {
+    html = `
+    <li event-id=${doc.ide} class="listelement">
+        <span class="title">${doc.data().title}</span><br>
+        <span class="date">Date: ${doc.data().date}</span><br>
+        <span class="address">Address: ${doc.data().address}</span><br>
+        <span class="organ_name">Organization Name: ${doc.data().organization}</span><br>
+        <span class="type">Charity Type: ${doc.data().type}</span><br>
+        <span class="description">${doc.data().description}</span>
+    </li>
+    `
+    return html
+}
+
 //real time listener to query the charity event elements.
 db.collection('event-list').orderBy('date').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     var event_listID = document.getElementById("event-list");
+    var finalhtml = "";
     //for each element in the query
     changes.forEach(change => {
         console.log(changes);
         //if it is tagged as added then render it otherwise remove it
         if (change.type == 'added') {
-            render_event_list_element(change.doc);
+            //render_event_list_element(change.doc);
+            element = convert_list_element(change.doc);
+            
         } else if (change.type == 'removed') {
             let li = event_list.querySelector('[event-id=' + change.doc.id + ']');
             event_list.removeChild(li);
         }
-    })
+        finalhtml = finalhtml + element
+    });
+    event_listID.innerHTML = finalhtml;
 })
