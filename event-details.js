@@ -50,8 +50,9 @@ function render_eventdetails_page() {
                 <span class="date"><strong>Date:</strong> ${doc.data().date}</span><br>
                 <span class="address"><strong>Address:</strong> ${doc.data().address}</span><br>
                 <span class="organ_name"><strong>Organization Name:</strong> ${doc.data().organization}</span><br>
-                <span class="type"><strong>Charity Type:</strong> ${doc.data().type}</span><br><br>
-                <span class="description"><strong>Descripton:</strong> ${doc.data().description}</span><br>
+                <span class="type"><strong>Charity Type:</strong> ${doc.data().type}</span><br>
+                <span class="contact"><strong>Contact:</strong> ${doc.data().contact}</span><br><br>
+                <span class="description"><strong>Description:</strong> ${doc.data().description}</span>
                 
                 <span class="volunteers"><strong>Volunteer List:</strong></span>
                 <table>
