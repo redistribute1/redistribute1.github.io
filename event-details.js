@@ -52,7 +52,7 @@ function render_eventdetails_page() {
                 <span class="organ_name"><strong>Organization Name:</strong> ${doc.data().organization}</span><br>
                 <span class="type"><strong>Charity Type:</strong> ${doc.data().type}</span><br>
                 <span class="contact"><strong>Contact:</strong> ${doc.data().contact}</span><br><br>
-                <span class="description"><strong>Description:</strong> ${doc.data().description}</span>
+                <span class="description"><strong>Description:</strong> ${doc.data().description}</span><br><br>
                 
                 <span class="volunteers"><strong>Volunteer List:</strong></span>
                 <table>
