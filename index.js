@@ -3,7 +3,7 @@ var googlemap = document.getElementById("map"); //reference google map being dis
 
 function convert_list_element(doc) {
     html = `
-    <li event-id=${doc.id} class="listelement">
+    <li id=${doc.id} class="listelement">
         <button class="details" onclick="upload_event_item_info('${doc.id}')">View Details</button>
         <span class="title"><strong>${doc.data().title}</strong></span><br>
         <span class="date"><strong>Date:</strong> ${doc.data().date}</span><br>
@@ -37,9 +37,13 @@ db.collection('event-list').orderBy('date').onSnapshot(snapshot => {
             element = convert_list_element(change.doc);
             
         } else if (change.type == 'removed') {
+            /*
             console.log("index remove");
             let li = event_list.querySelector('[event-id=' + change.doc.id + ']');
             event_list.removeChild(li);
+            */
+           var item = document.getElementById(change.doc.id);
+           event_listID.removeChild(item);
         }
         finalhtml = finalhtml + element
     });
