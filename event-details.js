@@ -60,9 +60,10 @@ function render_eventdetails_page() {
             `
             volunteerstring = doc.data().volunteers;
             varray = volunteerstring.split(";");
-            var i = 0;
+            var i = 3;
             
-            for(i = 0; i < varray.length; i+=3) {
+            for(i = 3; i < varray.length-1; i+=3) {
+                
                 html = html + `
                 <tr>
                     <td>${varray[i]}</td>
@@ -83,8 +84,8 @@ function render_eventdetails_page() {
                     
             rstring = doc.data().resources;
             rarray = rstring.split(";");
-            var j = 0;
-            for(j = 0; j < rarray.length; j++) {
+            var j = 1;
+            for(j = 1; j < rarray.length-1; j++) {
                 item_array = rarray[j].split('-');
                 console.log(item_array);
                 html = html + `
@@ -96,7 +97,6 @@ function render_eventdetails_page() {
             }
             html = html + `
             </table><br><br>`
-
             event_detailsID.innerHTML = html;
             
         }
@@ -105,6 +105,46 @@ function render_eventdetails_page() {
     });
     
 }
+
+const volunteerform = document.querySelector('#volunteer_form');
+volunteerform.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    //update the string
+    var getValue = localStorage.getItem('id');
+    var docRef = db.collection("event-list").doc(getValue);
+    docRef.get().then(function(doc) {
+        if (doc.exists) {
+            volunteerstring = doc.data().volunteers;
+            volunteerstring = volunteerstring + volunteerform['name'].value + ";" + volunteerform['phone'].value + ";" + volunteerform['email'].value + ";"; 
+            db.collection("event-list").doc(getValue).update({
+                "volunteers": volunteerstring
+            });
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
+});
+
+const rform = document.querySelector('#resource_form');
+rform.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    //update the string
+    var getValue = localStorage.getItem('id');
+    var docRef = db.collection("event-list").doc(getValue);
+    docRef.get().then(function(doc) {
+        if (doc.exists) {
+            resourcestring = doc.data().resources;
+            resourcestring = resourcestring + rform['name'].value + "-" + rform['quantity'].value + ";";  
+            db.collection("event-list").doc(getValue).update({
+                "resources": resourcestring
+            });
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
+});
 
 //logout function
 function logout() {

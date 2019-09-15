@@ -13,7 +13,8 @@ create_event.addEventListener('submit', (e) => {
         description: create_event['description'].value,
         organization: create_event['organization'].value,
         type: create_event['type'].value,
-        volunteers: ''
+        volunteers: 'Name;Phone;Email;',
+        resources: 'Item-Quantity;'
     }).then(() => {
         window.location.replace("index.html");
     });
