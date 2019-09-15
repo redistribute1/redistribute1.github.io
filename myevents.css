@@ -1,0 +1,55 @@
+body {
+    margin-top: 20%;
+    background-color: #FFFFFF;
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    height: 100%;
+}
+
+
+body #welcome {
+    text-align: center;
+}
+
+/*styles for the list elements*/
+.listelement {
+    border: .06rem solid #ccc;
+    margin: 0rem;
+    background-color: white;
+    padding: 1.5%;
+    list-style-type: none;
+}
+.title {
+    color: grey;
+    font-size: 180%;
+}
+.date .address{
+    color: red;
+}
+.description {
+    color: grey;
+    display: block;
+    width: 90%;
+}
+.details {
+    float: right;
+    background-color: var(--main-blue);
+    color: white;
+    outline: none;
+    padding: .5rem;
+    border: none;
+    border-radius: 1rem;
+}
+.delete {
+    float: right;
+    background-color: red;
+    color: white;
+    outline: none;
+    padding: .5rem;
+    margin: 0rem 1rem 0rem 0rem;
+    border: none;
+    border-radius: 1rem;
+}
+
