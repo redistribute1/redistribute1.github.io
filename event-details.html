@@ -1,76 +1,76 @@
 <!DOCTYPE HTML>
 <html lang="en">
 
-<head>
-  <title>Home</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="event-details.css">
-  <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="event-details.css">
+    <link rel="stylesheet" href="main.css">
 
-</head>
+  </head>
 
-<!-- Navigation Bar Injection -->
-<header>
-  <div id="include"></div>
-</header>
+  <!-- Navigation Bar Injection -->
+  <header>
+    <div id="include"></div>
+  </header>
 
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10 mx-auto">
-        <div id="event_detail_box" class="create-box">
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 mx-auto">
+          <div id="event_detail_box" class="create-box">
+          </div>
+          <br><br>
         </div>
-        <br><br>
-      </div>
-      <div class="col-md-6 mx-auto">
-        <div id="volunteer_signup" class="create-box">
-          <span class="title"><strong>Volunteer for this Event</strong></span>
-          <form id="volunteer_form">
-            <div class="form-group">
-              <label for="name">Name:</label>
-              <input type="text" class="form-control" id="name" placeholder="First Last">
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number:</label>
-              <input type="text" class="form-control" id="phone" placeholder="XXX-XXX-XXXX">
-            </div>
-            <div class="form-group">
-              <label for="email">Email:</label>
-              <input type="text" class="form-control" id="email" placeholder="email">
-            </div>
-            <div id="error_box"></div>
-            <button id="create_account" class="create-button" type="submit">Sign Up to Volunteer</button>
-          </form>
+        <div class="col-md-6 mx-auto">
+          <div id="volunteer_signup" class="create-box">
+            <span class="title"><strong>Volunteer for this Event</strong></span>
+            <form id="volunteer_form">
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="First Last">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="text" class="form-control" id="phone" placeholder="XXX-XXX-XXXX">
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" class="form-control" id="email" placeholder="email">
+              </div>
+              <div id="error_box"></div>
+              <button id="create_account" class="create-button" type="submit">Sign Up to Volunteer</button>
+            </form>
+          </div>
+          <br><br>
         </div>
-        <br><br>
-      </div>
-      <div class="col-md-6 mx-auto">
-        <div id="resource_signup" class="create-box">
-          <span class="title"><strong>Contribute Resources</strong></span>
-          <form id="resource_form">
-            <div class="form-group">
-              <label for="name">Item Description:</label>
-              <input type="text" class="form-control" id="name" placeholder="Pasta, Cans, Water Bottles">
-            </div>
-            <div class="form-group">
-              <label for="quantity">Quantity</label>
-              <input type="text" class="form-control" id="quantity" placeholder="Item Amount">
-            </div>
-            <div id="error_box"></div>
-            <button id="create_account" class="create-button" type="submit">Contribute</button>
-          </form>
+        <div class="col-md-6 mx-auto">
+          <div id="resource_signup" class="create-box">
+            <span class="title"><strong>Contribute Resources</strong></span>
+            <form id="resource_form">
+              <div class="form-group">
+                <label for="name">Item Description:</label>
+                <input type="text" class="form-control" id="name" placeholder="Pasta, Cans, Water Bottles">
+              </div>
+              <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="text" class="form-control" id="quantity" placeholder="Item Amount">
+              </div>
+              <div id="error_box"></div>
+              <button id="create_account" class="create-button" type="submit">Contribute</button>
+            </form>
+          </div>
+          <br><br>
         </div>
-        <br><br>
       </div>
     </div>
-  </div>
-  </div>
+</div>
 </body>
 
 
@@ -85,13 +85,13 @@
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyDN_Zn6Cdnnq4YozIlFhnjIwxdrO52mY94",
-    authDomain: "redistribute-3bef6.firebaseapp.com",
-    databaseURL: "https://redistribute-3bef6.firebaseio.com",
-    projectId: "redistribute-3bef6",
-    storageBucket: "redistribute-3bef6.appspot.com",
-    messagingSenderId: "592454097229",
-    appId: "1:592454097229:web:490aefd3cf1004313f3f04"
+      apiKey: "AIzaSyDN_Zn6Cdnnq4YozIlFhnjIwxdrO52mY94",
+      authDomain: "redistribute-3bef6.firebaseapp.com",
+      databaseURL: "https://redistribute-3bef6.firebaseio.com",
+      projectId: "redistribute-3bef6",
+      storageBucket: "redistribute-3bef6.appspot.com",
+      messagingSenderId: "592454097229",
+      appId: "1:592454097229:web:490aefd3cf1004313f3f04"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
