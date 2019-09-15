@@ -28,7 +28,7 @@ function upload_event_item_info(docid) {
 db.collection('event-list').orderBy('date').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     var event_listID = document.getElementById("event-list");
-    var finalhtml = "";
+    var finalhtml = event_listID.innerHTML;
     
     //for each element in the query
     changes.forEach(change => {
